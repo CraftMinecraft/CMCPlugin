@@ -1,4 +1,6 @@
-package com.craftminecraft.bukkit.cmcplugin;
+package net.craftminecraft.bukkit.cmcplugin;
+
+import net.craftminecraft.bukkit.cmcplugin.config.MainConfig;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -6,8 +8,12 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class CMCPlugin extends JavaPlugin implements Listener {
+	private MainConfig mainConfig;
+	
 	@Override
 	public void onEnable() {
+		mainConfig = new MainConfig(this);
+		mainConfig.load();
 		this.getServer().getPluginManager().registerEvents(this, this);
 	}
 	
@@ -22,7 +28,7 @@ public class CMCPlugin extends JavaPlugin implements Listener {
 		if (!(address.equals("50.49.250.100"))) {
 			this.getLogger().info(address);
 			ev.setResult(PlayerLoginEvent.Result.KICK_OTHER);
-			ev.setKickMessage("Please connect to playcmc.com or this server's domain !");
+			ev.setKickMessage("Please connect to playcmc.com or " + mainConfig.ServerAddress);
 		}
 	}
 }
