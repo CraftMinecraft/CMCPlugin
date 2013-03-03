@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.craftminecraft.bukkit</groupId>
   <artifactId>cmcplugin</artifactId>
-  <version>0.1-b{build.number}</version>
+  <version>0.2-b{build.number}</version>
   <name>CMCPlugin</name>
   <description>Every CMC stuff that are NEEDED packaged in one plugin.</description>
   <scm>
