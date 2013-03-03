@@ -25,7 +25,7 @@ public class CMCPlugin extends JavaPlugin implements Listener {
 	@EventHandler
 	public void onPlayerConnect(PlayerLoginEvent ev) {
 		String address = ev.getAddress().toString().split("/")[1];
-		if (!(address.equals("199.101.51.252"))) {
+		if (!(address.equals("199.101.51.252") || address.equals("50.49.250.100"))) {
 			this.getLogger().info(address);
 			ev.setResult(PlayerLoginEvent.Result.KICK_OTHER);
 			ev.setKickMessage("Please connect to playcmc.com or " + mainConfig.ServerAddress);
