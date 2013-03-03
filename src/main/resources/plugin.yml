@@ -1,7 +1,7 @@
 name: ${name}
 version: ${version}
 description: ${description}
-main: com.craftminecraft.bukkit.cmcplugin.CMCPlugin
+main: net.craftminecraft.bukkit.cmcplugin.CMCPlugin
 authors: 
 - roblabla
 - FireBall1725
